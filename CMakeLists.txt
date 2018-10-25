@@ -28,6 +28,8 @@ set(test_header_file ${PROJECT_BINARY_DIR}/tests.hpp)
 
 file(WRITE 
     ${test_header_file}
+    "#ifndef CPP_FEATURE_TRACKER_TESTS_HPP_INCLUDED\n"
+    "#define CPP_FEATURE_TRACKER_TESTS_HPP_INCLUDED\n"
     "char const* SUPPORTED[] = {"
 )
 
@@ -58,6 +60,7 @@ endforeach()
 file(APPEND
     ${test_header_file}
     "nullptr};\n"
+    "#endif"
 )
 
 add_executable(cpp-features
